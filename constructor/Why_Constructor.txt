@@ -1,0 +1,67 @@
+CASE 1: 
+The above code is wrong because it gives garbage value as the other programmer does not give value to w, so the output comes is garbage.
+#include<iostream>
+using namespace std;
+class Bulb
+{
+private:
+w;
+public:
+void setwattage(int e)
+{
+if(e>0 && e<=240) w=e;
+else w=0;
+}
+int getwattage()
+{
+return w;
+}
+};
+int main()
+{
+Bulb g;
+cout<<"Wattage is "<<getWattage()<<endl;
+return 0;
+}
+
+
+
+CASE 2:
+IF we assign w=0, while declaring w
+i.e 
+class Bulb
+{
+private:
+int w=0;
+-
+-
+-
+};
+But we can not assign the value while declaring the variable/properties in class , Therefore code won't get compilled
+
+
+CASE 3:
+
+Class Bulb
+{
+private:
+int w:
+public:
+void initilize()
+{
+w=0;
+}
+--
+-
+-
+
+-
+-
+};
+But still problem will not get solved. Because it is not gurantee that the other programmer can call this funciton
+
+
+CASE 4:
+
+NOw we need a function which automatically call when we create a object of class.
+The solution is constructor.

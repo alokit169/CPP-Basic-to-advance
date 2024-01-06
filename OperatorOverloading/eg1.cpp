@@ -1,3 +1,5 @@
+
+//Replica Of cout
 #include<stdio.h>
 class Monitor
 {

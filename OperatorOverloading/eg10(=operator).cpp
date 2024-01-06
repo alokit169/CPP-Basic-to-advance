@@ -3,7 +3,6 @@ using namespace std;
 class Bulb
 {
 int wattage;
-int price;
 public:
 void setWattage(int wattage)
 {
@@ -19,27 +18,33 @@ cout<<"Default Constructor"<<endl;
 }
 Bulb(int wattage)
 {
-cout<<"parameter Constructor"<<endl;
+cout<<"Parameterized constructor got invoked\n";
 this->wattage=wattage;
 }
 Bulb(const Bulb &v)
 {
-cout<<"Copy constructor"<<endl;
+cout<<"Copy constructor got invoked"<<endl;
 this->wattage=v.wattage;
 }
-Bulb & operator=(Bulb &other)
+/*
+Bulb & operator=(int wattage)
 {
-cout<<"Other = operator get invoked"<<endl;
+cout<<"operator = with (int) parameterized got executed"<<endl;
+this->wattage=wattage;
+return *this;
+}
+*/
+Bulb & operator=(const Bulb &other)
+{
+cout<<"Operator = got invoked\n";
 this->wattage=other.wattage;
 return *this;
 }
-
 };
 int main()
 {
-Bulb k=100;
-Bulb m=200;
-k=m;
-cout<<k.getWattage();
+Bulb k;
+k=Bulb();
+k=90;
 return 0;
 }
